@@ -52,7 +52,7 @@ def add_etudiant(request):
 def delete_etudiant(request, _id):
     if request.method == 'GET':
         try:
-            etudiant = Etudiant.objects.get(id=_id)
+            etudiant = Etudiant.objects.get(pk=_id)
             etudiant.delete()
             response = json.dumps([{'succès': 'Etudiant a été supprimé avec succès!'}])
         except:
